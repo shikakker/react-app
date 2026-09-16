@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: 22
           cache: yarn
+      - run: node --test tests/*.test.mjs
       - run: yarn install --frozen-lockfile --non-interactive
       - run: CI=true yarn test --watchAll=false
       - run: yarn build
